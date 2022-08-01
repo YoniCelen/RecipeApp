@@ -6,18 +6,19 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var addButton: Button
+    private lateinit var addButton: FloatingActionButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
-        addButton = findViewById<Button>(R.id.addButton)
+        addButton = findViewById<FloatingActionButton>(R.id.addButton)
         addButton.setOnClickListener(View.OnClickListener {
             val intent = Intent(this, addActivity::class.java)
             startActivity(intent)
