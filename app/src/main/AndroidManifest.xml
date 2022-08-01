@@ -11,9 +11,12 @@
         android:theme="@style/Theme.RecipeApp">
         <activity
             android:name=".addActivity"
+            android:label="Add Recipe"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:label="Recipes"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
