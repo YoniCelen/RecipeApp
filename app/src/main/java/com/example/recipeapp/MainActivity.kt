@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         addButton = findViewById<FloatingActionButton>(R.id.addButton)
         addButton.setOnClickListener(View.OnClickListener {
-            val intent = Intent(this, addActivity::class.java)
+            val intent = Intent(this, AddActivity::class.java)
             startActivity(intent)
         })
     }
