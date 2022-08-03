@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RecipeApp">
         <activity
-            android:name=".addActivity"
+            android:name=".AddActivity"
             android:label="Add Recipe"
             android:parentActivityName=".MainActivity"
             android:exported="false" />
