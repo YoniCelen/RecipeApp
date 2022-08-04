@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 
 class AddActivity : AppCompatActivity() {
 
@@ -26,6 +27,7 @@ class AddActivity : AppCompatActivity() {
         submitRecipeButton = findViewById(R.id.submitRecipeButton);
         submitRecipeButton.setOnClickListener(View.OnClickListener {
             val myDB = MyDatabaseHelper(this);
+
             myDB.addRecipe(
                 nameInput.text.toString(),
                 ingredientsInput.text.toString(),

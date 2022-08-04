@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     private Context context;
-    private static final String DATABASE_NAME = "";
+    private static final String DATABASE_NAME = "recipeDB";
     private static final int DATABASE_VERSION = 1;
     private static final String TABLE_NAME = "recipes";
     private static final String COLUMN_ID = "_id";
@@ -31,10 +31,10 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
                 "CREATE TABLE " + TABLE_NAME +
                         " (" +
                         COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                        COLUMN_NAME + "TEXT, " +
-                        COLUMN_INGREDIENTS + "TEXT, " +
-                        COLUMN_STEPS + "TEXT, " +
-                        COLUMN_AUTHOR + "TEXT);";
+                        COLUMN_NAME + " TEXT, " +
+                        COLUMN_INGREDIENTS + " TEXT, " +
+                        COLUMN_STEPS + " TEXT, " +
+                        COLUMN_AUTHOR + " TEXT);";
         db.execSQL(query);
     }
 
@@ -51,11 +51,15 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_INGREDIENTS, ingredients);
         cv.put(COLUMN_STEPS, steps);
         cv.put(COLUMN_AUTHOR, author);
+
+        //CRASHES HERE
+
         long result = db.insert(TABLE_NAME, null, cv);
+
         if (result == -1) {
-            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this.context, "Failed", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(context, "Successfully added", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this.context, "Successfully added", Toast.LENGTH_SHORT).show();
         }
     }
 }
