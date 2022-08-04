@@ -23,6 +23,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     public MyDatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.context = context;
     }
 
     @Override
@@ -54,12 +55,15 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
         //CRASHES HERE
 
+        System.out.println("test");
+        System.out.println(context);
+
         long result = db.insert(TABLE_NAME, null, cv);
 
         if (result == -1) {
-            Toast.makeText(this.context, "Failed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this.context, "Successfully added", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Successfully added", Toast.LENGTH_SHORT).show();
         }
     }
 }

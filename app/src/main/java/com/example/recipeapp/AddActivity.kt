@@ -1,12 +1,10 @@
 package com.example.recipeapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
 class AddActivity : AppCompatActivity() {
 
@@ -27,7 +25,6 @@ class AddActivity : AppCompatActivity() {
         submitRecipeButton = findViewById(R.id.submitRecipeButton);
         submitRecipeButton.setOnClickListener(View.OnClickListener {
             val myDB = MyDatabaseHelper(this);
-
             myDB.addRecipe(
                 nameInput.text.toString(),
                 ingredientsInput.text.toString(),
