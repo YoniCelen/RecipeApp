@@ -35,7 +35,11 @@ class UpdateActivity : AppCompatActivity() {
         getAndSetIntentData()
         updateRecipeButton.setOnClickListener(View.OnClickListener {
             var myDB = MyDatabaseHelper(this)
-            myDB.updateData(id, name, ingredients, steps, author)
+            myDB.updateData(id,
+                nameUpdate.text.toString(),
+                ingredientsUpdate.text.toString(),
+                stepsUpdate.text.toString(),
+                authorUpdate.text.toString())
         })
     }
 
