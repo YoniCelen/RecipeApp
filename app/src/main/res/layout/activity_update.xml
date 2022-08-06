@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddActivity">
+    tools:context=".UpdateActivity">
 
     <EditText
-        android:id="@+id/nameInput"
+        android:id="@+id/nameUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -18,14 +18,13 @@
         android:ems="10"
         android:hint="Name of the recipe"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_min="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/ingredientsInput"
+        android:id="@+id/ingredientsUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -36,14 +35,13 @@
         android:ems="10"
         android:hint="Ingrediënts needed"
         android:inputType="textPersonName"
-        android:text="Ingrediënts"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_min="48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameInput" />
+        app:layout_constraintTop_toBottomOf="@+id/nameUpdate" />
 
     <EditText
-        android:id="@+id/stepsInput"
+        android:id="@+id/stepsUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -54,14 +52,13 @@
         android:ems="10"
         android:hint="Steps to follow"
         android:inputType="textPersonName"
-        android:text="Steps"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_min="48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ingredientsInput" />
+        app:layout_constraintTop_toBottomOf="@+id/ingredientsUpdate" />
 
     <EditText
-        android:id="@+id/authorInput"
+        android:id="@+id/authorUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -72,14 +69,13 @@
         android:ems="10"
         android:hint="Name of the recipe's author"
         android:inputType="textPersonName"
-        android:text="Author"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_min="48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stepsInput" />
+        app:layout_constraintTop_toBottomOf="@+id/stepsUpdate" />
 
     <Button
-        android:id="@+id/submitRecipeButton"
+        android:id="@+id/UpdateRecipeButton"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginStart="40dp"
@@ -87,9 +83,9 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
-        android:text="Submit"
+        android:text="Update"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/authorInput" />
+        app:layout_constraintTop_toBottomOf="@+id/authorUpdate" />
 </androidx.constraintlayout.widget.ConstraintLayout>
