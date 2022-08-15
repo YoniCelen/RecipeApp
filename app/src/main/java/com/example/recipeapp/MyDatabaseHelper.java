@@ -22,6 +22,10 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_STEPS = "recipe_steps";
     private static final String COLUMN_AUTHOR = "recipe_author";
 
+    private static final String TABLE_USERS = "users";
+    private static final String COLUMN_USERNAME = "username";
+    private static final String COLUMN_PASSWORD = "password";
+
     public MyDatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
@@ -37,12 +41,22 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
                         COLUMN_INGREDIENTS + " TEXT, " +
                         COLUMN_STEPS + " TEXT, " +
                         COLUMN_AUTHOR + " TEXT);";
+
+        String query2 =
+                "CREATE TABLE " + TABLE_USERS +
+                        " (" +
+                        COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        COLUMN_USERNAME + " TEXT, " +
+                        COLUMN_PASSWORD + " TEXT);";
+
         db.execSQL(query);
+        db.execSQL(query2);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERS);
     }
 
     void addRecipe(String name, String ingredients, String steps, String author){
@@ -62,8 +76,37 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    void addUser(String username, String password){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(COLUMN_USERNAME, username);
+        cv.put(COLUMN_PASSWORD, password);
+
+        long result = db.insert(TABLE_USERS, null, cv);
+        if (result == -1) {
+            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Successfully added", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     public Cursor readAllData() {
         String query = "SELECT * FROM " + TABLE_NAME;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if (db != null) {
+            cursor = db.rawQuery(query, null);
+
+        }
+        return cursor;
+    }
+
+    public Cursor readUser(String username, String password) {
+        String query = "SELECT * FROM " + TABLE_USERS +
+                " WHERE " + COLUMN_USERNAME + " = " + username +
+                " && " + COLUMN_PASSWORD + " = " + password;
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = null;
