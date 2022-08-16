@@ -75,9 +75,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-        R.id.action_main -> {
-            true
-        }
 
         R.id.action_favorites -> {
             true

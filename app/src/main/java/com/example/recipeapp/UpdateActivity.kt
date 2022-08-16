@@ -29,6 +29,7 @@ class UpdateActivity : AppCompatActivity() {
         setContentView(R.layout.activity_update)
 
         setSupportActionBar(findViewById(R.id.my_toolbar))
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         nameUpdate = findViewById(R.id.nameUpdate)
         ingredientsUpdate = findViewById(R.id.ingredientsUpdate)
@@ -65,9 +66,6 @@ class UpdateActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-        R.id.action_main -> {
-            true
-        }
 
         R.id.action_favorites -> {
             true

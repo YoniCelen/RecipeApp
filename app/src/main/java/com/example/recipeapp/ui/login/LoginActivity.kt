@@ -30,6 +30,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(findViewById(R.id.my_toolbar))
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val username = binding.username
         val password = binding.password
@@ -118,9 +119,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-        R.id.action_main -> {
-            true
-        }
 
         R.id.action_favorites -> {
             true

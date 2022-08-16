@@ -21,6 +21,7 @@ class AddActivity : AppCompatActivity() {
         setContentView(R.layout.activity_add)
 
         setSupportActionBar(findViewById(R.id.my_toolbar))
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         nameInput = findViewById(R.id.nameInput);
         ingredientsInput = findViewById(R.id.ingredientsInput);
@@ -38,9 +39,6 @@ class AddActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-        R.id.action_main -> {
-            true
-        }
 
         R.id.action_favorites -> {
             true
