@@ -59,7 +59,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERS);
     }
 
-    void addRecipe(String name, String ingredients, String steps, String author){
+    public void addRecipe(String name, String ingredients, String steps, String author){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -76,7 +76,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    void addUser(String username, String password){
+    public void addUser(String username, String password){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -105,8 +105,21 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor readUser(String username, String password) {
         String query = "SELECT * FROM " + TABLE_USERS +
-                " WHERE " + COLUMN_USERNAME + " = " + username +
-                " && " + COLUMN_PASSWORD + " = " + password;
+                " WHERE " + COLUMN_USERNAME + " = '" + username +
+                "' AND " + COLUMN_PASSWORD + " = '" + password + "'";
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if (db != null) {
+            cursor = db.rawQuery(query, null);
+
+        }
+        return cursor;
+    }
+
+    public Cursor checkUsername(String username) {
+        String query = "SELECT * FROM " + TABLE_USERS +
+                " WHERE " + COLUMN_USERNAME + " = '" + username + "';";
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = null;
