@@ -3,6 +3,8 @@ package com.example.recipeapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
@@ -70,5 +72,30 @@ class MainActivity : AppCompatActivity() {
                 recipe_authors.add(cursor.getString(4))
             }
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.action_main -> {
+            true
+        }
+
+        R.id.action_favorites -> {
+            true
+        }
+
+        R.id.action_account -> {
+            true
+        }
+
+        else -> {
+            // If we got here, the user's action was not recognized.
+            // Invoke the superclass to handle it.
+            super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
     }
 }
