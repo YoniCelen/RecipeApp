@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        setSupportActionBar(findViewById(R.id.my_toolbar))
+
         recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         addButton = findViewById<FloatingActionButton>(R.id.addButton)
         addButton.setOnClickListener(View.OnClickListener {

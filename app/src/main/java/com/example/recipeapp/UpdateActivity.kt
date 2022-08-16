@@ -26,6 +26,8 @@ class UpdateActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update)
 
+        setSupportActionBar(findViewById(R.id.my_toolbar))
+
         nameUpdate = findViewById(R.id.nameUpdate)
         ingredientsUpdate = findViewById(R.id.ingredientsUpdate)
         stepsUpdate = findViewById(R.id.stepsUpdate)

@@ -18,6 +18,8 @@ class AddActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add)
 
+        setSupportActionBar(findViewById(R.id.my_toolbar))
+
         nameInput = findViewById(R.id.nameInput);
         ingredientsInput = findViewById(R.id.ingredientsInput);
         stepsInput = findViewById(R.id.stepsInput);
