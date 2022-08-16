@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.recipeapp.ui.login.LoginActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
@@ -77,10 +78,14 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
 
         R.id.action_favorites -> {
+            //val intent = Intent(this, FavoritesActivity::class.java)
+            //startActivity(intent)
             true
         }
 
         R.id.action_account -> {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
             true
         }
 

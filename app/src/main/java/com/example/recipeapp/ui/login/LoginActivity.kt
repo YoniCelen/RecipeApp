@@ -125,6 +125,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         R.id.action_account -> {
+            //Already on this Activity
             true
         }
 

@@ -1,5 +1,6 @@
 package com.example.recipeapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -9,6 +10,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.recipeapp.ui.login.LoginActivity
 
 class UpdateActivity : AppCompatActivity() {
 
@@ -72,6 +74,8 @@ class UpdateActivity : AppCompatActivity() {
         }
 
         R.id.action_account -> {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
             true
         }
 
