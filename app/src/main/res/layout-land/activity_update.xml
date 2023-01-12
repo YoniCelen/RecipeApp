@@ -18,65 +18,69 @@
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-    <EditText
-        android:id="@+id/nameUpdate"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="@string/name_of_the_recipe"
-        android:inputType="textPersonName"
-        app:layout_constraintHeight_min="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
-
-    <EditText
-        android:id="@+id/ingredientsUpdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="40dp"
-        android:ems="10"
-        android:hint="@string/ingredi_nts_needed"
-        android:inputType="textPersonName"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/UpdateRecipeButton"
-        app:layout_constraintHeight_min="48dp"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameUpdate" />
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
+        app:layout_constraintVertical_bias="0.0">
 
-    <EditText
-        android:id="@+id/stepsUpdate"
-        android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/nameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/name_of_the_recipe"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"/>
+
+        <EditText
+            android:id="@+id/stepsInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/steps_to_follow"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="40dp"
-        android:ems="10"
-        android:hint="@string/steps_to_follow"
-        android:inputType="textPersonName"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/UpdateRecipeButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_min="48dp"
-        app:layout_constraintTop_toBottomOf="@+id/authorUpdate" />
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar">
 
-    <EditText
-        android:id="@+id/authorUpdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:ems="10"
-        android:hint="@string/name_of_the_recipe_s_author"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_min="48dp"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
+        <EditText
+            android:id="@+id/authorInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/name_of_the_recipe_s_author"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"/>
+
+        <EditText
+            android:id="@+id/ingredientsInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/ingredi_nts_needed"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"/>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/UpdateRecipeButton"
@@ -88,7 +92,7 @@
         android:layout_marginRight="40dp"
         android:layout_marginBottom="20dp"
         android:text="@string/update"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
